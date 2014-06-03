@@ -80,6 +80,8 @@ public class Kayit extends Fragment{
 		KayitPinnedAdapter adapterPinned = new KayitPinnedAdapter(getActivity(), R.layout.kayit_list, kayitlar);
 		listSection.setAdapter(adapterPinned);
 		
+		listSection.setFastScrollEnabled(true);
+		listSection.setFastScrollAlwaysVisible(true);
 		
 		/*
 		// Pinned
