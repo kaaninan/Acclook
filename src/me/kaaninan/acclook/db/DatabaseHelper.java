@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		+ DatabaseContract.Kayit.COLUMN_NOT + " text , "
 		+ DatabaseContract.Kayit.COLUMN_HESAP_ID + " text , "
 		+ DatabaseContract.Kayit.COLUMN_KATEGORI_ID + " text , "
+		+ DatabaseContract.Kayit.COLUMN_TYPE + " int ,"
 		+ DatabaseContract.Kayit.COLUMN_TARIH + " datetime );";
 	
 	public static final String 
@@ -46,9 +47,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		
 		// Ekleme
 		db.execSQL("INSERT INTO "+DatabaseContract.Hesap.TABLE_NAME+" ("+DatabaseContract.Hesap.COLUMN_ISIM+","+DatabaseContract.Hesap.COLUMN_TOPLAM+") VALUES ('Nakit','30')");
-		db.execSQL("INSERT INTO "+DatabaseContract.Hesap.TABLE_NAME+" ("+DatabaseContract.Hesap.COLUMN_ISIM+","+DatabaseContract.Hesap.COLUMN_TOPLAM+") VALUES ('Paypal','20')");
-		db.execSQL("INSERT INTO "+DatabaseContract.Hesap.TABLE_NAME+" ("+DatabaseContract.Hesap.COLUMN_ISIM+","+DatabaseContract.Hesap.COLUMN_TOPLAM+") VALUES ('Kredi Kartý','55')");
-		
+		/*db.execSQL("INSERT INTO "+DatabaseContract.Kayit.TABLE_NAME+" ("+DatabaseContract.Kayit.COLUMN_NOT+","+DatabaseContract.Kayit.COLUMN_TUTAR+") VALUES ('Paypal','20')");
+		db.execSQL("INSERT INTO "+DatabaseContract.Kayit.TABLE_NAME+" ("+DatabaseContract.Kayit.COLUMN_NOT+","+DatabaseContract.Kayit.COLUMN_TUTAR+") VALUES ('Kredi Kartý','55')");
+		*/
 		}
 
 	@Override

@@ -1,16 +1,21 @@
 package me.kaaninan.acclook.constructor;
 
 public class KayitConstructor {
-
-	public  int ITEM = 0;
-	public static  int SECTION = 1;
-
-	public  int type;
-	public  String text;
-
-	public int sectionPosition;
-	public int listPosition;
 	
+	
+	// PinnedSectionListView
+
+	public static int ITEM = 0;
+	public static int SECTION = 1;
+
+	public int type;
+	public String text;
+	
+	// ###
+	
+	
+	
+
     int _id;
     String _tur;
     double _tutar;
@@ -18,6 +23,8 @@ public class KayitConstructor {
     int _hesap_id;
     int _kategori_id;
     String _tarih;
+    
+    String _header;
     
     public KayitConstructor(){}
 
@@ -83,6 +90,28 @@ public class KayitConstructor {
     public void setTarih(String tarih){
         this._tarih = tarih;
     }
+    
+    
+    
+    // HEADER
+    public String getHeader(){
+    	return this._header;
+    }
+    
+    public void setHeader(String header){
+    	this._header = header;
+    }
+    
+    
+    // TYPE
+    public int getType(){
+    	return this.type;
+    }
+    
+    public void setType(int type){
+    	this.type = type;
+    }
+   
     
     
     

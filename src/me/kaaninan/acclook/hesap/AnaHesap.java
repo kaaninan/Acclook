@@ -7,14 +7,15 @@ import me.kaaninan.acclook.adapter.HesapAdapter;
 import me.kaaninan.acclook.constructor.HesapConstructor;
 import me.kaaninan.acclook.db.DatabaseManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class AnaHesap extends Fragment {
 	 
@@ -42,13 +43,25 @@ public class AnaHesap extends Fragment {
 		arrayListHesap = manager.getHesaplar();
 		
 		//empty = root.findViewById(R.id.emptyView);
-		
+		/*
 		if(arrayListHesap.size() == 0){
 			listViewHesap.setEmptyView(empty);
-		}else{
+		}else{*/
 			adapterHesap = new HesapAdapter(getActivity().getApplicationContext(), R.layout.hesap_ana_list, arrayListHesap);
 			listViewHesap.setAdapter(adapterHesap);
-		}
+		//}
+		
+		/* Hesap Listesinin Click Listener'ý */
+		
+		
+		listViewHesap.setOnItemClickListener(new OnItemClickListener()
+		{
+		    @Override 
+		    public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+		    { 
+		        Toast.makeText(getActivity(), "Seçilen hesap id -> " + position, Toast.LENGTH_SHORT).show();
+		    }
+		});
 		
         return root;
     }

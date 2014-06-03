@@ -117,6 +117,7 @@ public class DatabaseManager extends FragmentActivity {
     	ContentValues satir = new ContentValues();
     	satir.put(DatabaseContract.Kayit.COLUMN_TUTAR, tutar);
     	satir.put(DatabaseContract.Kayit.COLUMN_NOT, not);
+    	satir.put(DatabaseContract.Kayit.COLUMN_TYPE, 0);
     	
     	if(!tarih.isEmpty()){
     		String[] dbTarih = convertDateTimeNoktaTire(tarih);

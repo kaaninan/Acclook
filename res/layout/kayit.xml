@@ -37,23 +37,23 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:background="@android:color/white" />
-    -->
+    
     
     <ExpandableListView
         android:id="@+id/listExpandable"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     
-    <!--
+    -->
+    
 	<com.hb.views.PinnedSectionListView
-	    android:id="@android:id/list"
+	    android:id="@+id/listSection"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent" 
 	    android:headerDividersEnabled="false"
-	    android:footerDividersEnabled="false"
 	    android:divider="@null"	/>
     
-    
+    <!--
     
    	<com.handmark.pulltorefresh.library.PullToRefreshListView
     	android:id="@+id/hadi"

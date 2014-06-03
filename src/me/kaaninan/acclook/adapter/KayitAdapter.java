@@ -23,12 +23,14 @@ public class KayitAdapter extends BaseAdapter {
     	this.list = list;
     }
     
+    @Override
     public int getCount() {
     	if(list.size() == 0)
     		return 1;
         return list.size();
     }
 
+    
     public Object getItem(int position) {
         return position;
     }

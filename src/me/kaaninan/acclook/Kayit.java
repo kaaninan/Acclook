@@ -2,9 +2,8 @@ package me.kaaninan.acclook;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import me.kaaninan.acclook.adapter.KayitExpandableAdapter;
+import me.kaaninan.acclook.adapter.KayitPinnedAdapter;
 import me.kaaninan.acclook.constructor.KayitConstructor;
 import me.kaaninan.acclook.db.DatabaseContract;
 import me.kaaninan.acclook.db.DatabaseManager;
@@ -12,11 +11,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
+
+import com.hb.views.PinnedSectionListView;
 
 public class Kayit extends Fragment{
 
@@ -36,11 +36,24 @@ public class Kayit extends Fragment{
 	
 	
 	// Expandable ListView
-	private ExpandableListView listViewExpandable;
-	private ExpandableListAdapter adapterExpandable;
-	private HashMap<String, List<KayitConstructor>> listDataChild;
+	//private ExpandableListView listViewExpandable;
+	//private ExpandableListAdapter adapterExpandable;
+	
+	private HashMap<String, ArrayList<KayitConstructor>> listDataChild;
 	private ArrayList<String> listDataHeader;
 	
+	private ArrayList<KayitConstructor> kayitlar;
+	
+	
+	// Kayýt Pinned Adapter
+	private PinnedSectionListView listSection;
+	
+	/*
+	private boolean hasHeaderAndFooter;
+	private boolean isFastScroll;
+	private boolean addPadding;
+	private boolean isShadowVisible = true;
+	*/
 	
 	
     public static Fragment newInstance(Context context) {
@@ -53,6 +66,20 @@ public class Kayit extends Fragment{
 		root = (ViewGroup) inflater.inflate(R.layout.kayit, null);
 		//ViewGroup emptyViewGroup = (ViewGroup) inflater.inflate(R.layout.empty, null);
 		manager = new DatabaseManager(getActivity().getApplicationContext());
+		
+		
+		
+		// PinnedSectionListView
+		
+		listSection = (PinnedSectionListView) root.findViewById(R.id.listSection);
+		
+		//arrayListKayit = manager.getKayitlar(null, null);
+		
+		prepareListData();
+		
+		KayitPinnedAdapter adapterPinned = new KayitPinnedAdapter(getActivity(), R.layout.kayit_list, kayitlar);
+		listSection.setAdapter(adapterPinned);
+		
 		
 		/*
 		// Pinned
@@ -71,19 +98,19 @@ public class Kayit extends Fragment{
 		listViewKayit = (ListView) root.findViewById(R.id.listKayit);
 		//listViewKayit2 = (PullToRefreshListView) root.findViewById(R.id.hadi);
 		
-		arrayListKayit = manager.getKayitlar(null);
+		arrayListKayit = manager.getKayitlar();
 		
 		if(arrayListKayit.size() == 0){
 			listViewKayit.setEmptyView(empty);
 		}else{
-			adapterList = new KayitAdapter(getActivity(), R.layout.kayit_list, arrayListKayit);
+			adapterList = new KayitAdapter(getActivity().getApplicationContext(), R.layout.kayit_list, arrayListKayit);
 			listViewKayit.setAdapter(adapterList);
 		}
 		// End Kayit Adapter
 		*/
 		
 		
-		
+		/*
 		// Expandable ListView
 		listViewExpandable = (ExpandableListView) root.findViewById(R.id.listExpandable);
 		prepareListData();
@@ -94,7 +121,7 @@ public class Kayit extends Fragment{
 		listViewExpandable.setAdapter(adapterExpandable);
 		
 		// End Expandable ListView
-		
+		*/
 		
 		
 		
@@ -181,6 +208,28 @@ public class Kayit extends Fragment{
 	
 	
 	
+	
+	// PinnedSection List View
+
+/*
+    @SuppressLint("NewApi")
+    private void initializeAdapter() {
+        getListView().setFastScrollEnabled(isFastScroll);
+        if (isFastScroll) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                getListView().setFastScrollAlwaysVisible(true);
+            }
+            setListAdapter(new FastScrollAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1));
+        } else {
+            setListAdapter(new SimpleAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1));
+        }
+    }
+    */
+    // #####
+	
+	
+	
+	
 	private int a;
 	
 	private int gun;
@@ -201,15 +250,16 @@ public class Kayit extends Fragment{
 	
 	private void prepareListData() {
 		
-		
 		a = 0;
 		listDataHeader = new ArrayList<String>();
-		listDataChild = new HashMap<String, List<KayitConstructor>>();
+		listDataChild = new HashMap<String, ArrayList<KayitConstructor>>();
+		
+		kayitlar = new ArrayList<KayitConstructor>();
 		
 		manager = new DatabaseManager(getActivity());
 		c = manager.sorgulaKayitlar();
-		listDataHeader.add("dsad");
-		//listDataHeader.add("sad");
+		
+		
 		// Bir kayýt için olanlar
 		while (c.moveToNext()){
 			dbTarih = c.getString(c.getColumnIndex(DatabaseContract.Kayit.COLUMN_TARIH));
@@ -358,6 +408,17 @@ public class Kayit extends Fragment{
 		arrayListKayit = manager.getKayitlar(dbTarih, tercih);
 		yapildi = ay;
 		listDataChild.put(listDataHeader.get(a), arrayListKayit);
+		
+		// Pinned için
+		KayitConstructor kayitt = new KayitConstructor();
+		kayitt.setNot(listDataHeader.get(a));
+		kayitt.setType(1);
+		
+		kayitlar.add(kayitt);
+		kayitlar.addAll(arrayListKayit);
+		
+		Log.i("Kayit.java, kayitlar size",String.valueOf(kayitlar.size()));
+		
 		a++;
 	}
 	
@@ -395,13 +456,18 @@ public class Kayit extends Fragment{
 		listViewKayit.setAdapter(adapterList);
 */
 		
-		
+/*
 		// Expandable ListView
 		prepareListData();	
 		adapterExpandable = new KayitExpandableAdapter(getActivity(), listDataHeader, listDataChild);
 		listViewExpandable.setAdapter(adapterExpandable);
-		
+*/
 
+		// Pinned Section
+		arrayListKayit = manager.getKayitlar(null, null);
+		
+		KayitPinnedAdapter adapterPinned = new KayitPinnedAdapter(getActivity(), android.R.layout.simple_list_item_1, kayitlar);
+		listSection.setAdapter(adapterPinned);
 	}
 
 		

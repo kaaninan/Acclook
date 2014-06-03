@@ -105,9 +105,9 @@ public final class R {
         public static final int lblListHeader=0x7f09003a;
         public static final int lblListItem=0x7f09003b;
         public static final int lblListItem2=0x7f09003c;
-        public static final int listExpandable=0x7f090031;
         public static final int listHesapTumIkinciList=0x7f090018;
         public static final int listHesapTumList=0x7f090013;
+        public static final int listSection=0x7f090031;
         public static final int main=0x7f09003e;
         public static final int pager=0x7f09001e;
         public static final int pager_title_strip=0x7f09001f;

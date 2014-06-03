@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class Alinacak extends Fragment {
-
-/* Deneme satırı */
 	 
     public static Fragment newInstance(Context context) {
     	Alinacak f = new Alinacak();
