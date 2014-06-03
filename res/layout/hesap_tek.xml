@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutHesap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hesapBackground"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	    android:id="@+id/layoutHesapBirinci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/marginLayout"
+        android:layout_marginLeft="@dimen/marginLayout"
+        android:layout_marginTop="@dimen/marginLayout"
+        android:orientation="vertical" >
+        
+	    <LinearLayout
+		    android:id="@+id/layoutHesapTumBirinciBaslik"
+		    android:layout_width="match_parent"
+		    android:layout_height="40dp"
+		    android:paddingLeft="@dimen/marginLayout"
+		    android:gravity="center_vertical"
+		    android:background="@drawable/hesapBaslikBackground"
+		    android:orientation="vertical"
+		    android:text="@string/textHesapTumIkinciBaslik" >
+
+			<TextView
+			    android:id="@+id/textHesapTumBirinciBaslik"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/textHesapTumBirinciBaslik"
+			    android:textSize="@dimen/textHesapTumBaslik"
+			    android:textColor="@drawable/colorHesapBaslik" />
+
+		</LinearLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutHesapBirinciToplam"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/hesapLayoutBackground"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textHesapTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="28sp"
+                android:text="555,00 TL"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+        
+	
+        <LinearLayout
+            android:id="@+id/layoutHesapGelirGiderToplam"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+			
+            <LinearLayout
+                android:id="@+id/layoutHesapGelirToplam"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/hesapLayoutBackground"
+                android:orientation="vertical" >
+        		
+                <LinearLayout
+                    android:id="@+id/layoutHesapGelirToplamUst"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#03cdc5"
+                    android:orientation="vertical" >
+        		
+					<TextView
+               			android:id="@+id/textHesapGelirToplamUst"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+              	 		android:layout_gravity="center"
+           				android:textSize="@dimen/textHesapToplam"
+           				android:textColor="#eee"
+               			android:text="+" />
+        			
+				</LinearLayout>
+               
+				<LinearLayout
+        			android:id="@+id/layoutHesapGelirToplamAlt"
+        			android:layout_width="match_parent"
+        			android:layout_height="70dp"
+        			android:gravity="center"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+
+					<TextView
+					    android:id="@+id/textHesapGelirToplamAlt"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_gravity="center|bottom"
+					    android:text="1000 TL"
+					    android:textSize="25sp" />
+        			
+               </LinearLayout>
+        	</LinearLayout>
+        	
+            
+            <LinearLayout
+        		android:id="@+id/layoutHesapGiderToplam"
+        		android:layout_width="match_parent"
+        		android:layout_height="90dp"
+        		android:layout_weight="1"
+        		android:layout_marginLeft="2.5dp"
+        		android:background="@drawable/hesapLayoutBackground"
+        		android:orientation="vertical" >
+        		
+                <LinearLayout
+                    android:id="@+id/layoutHesapGiderToplamUst"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+        		
+					<TextView
+               			android:id="@+id/textHesapGiderToplamUst"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+              	 		android:layout_gravity="center"
+           				android:textSize="@dimen/textHesapToplam"
+               			android:text="-" />
+        			
+				</LinearLayout>
+               
+				<LinearLayout
+        			android:id="@+id/layoutHesapGiderToplamAlt"
+        			android:layout_width="match_parent"
+        			android:layout_height="50dp"
+        			android:gravity="center"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+        		
+                	<TextView
+               			android:id="@+id/textHesapGiderToplamAlt"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+              	 		android:layout_gravity="center|bottom"
+           				android:textSize="25sp"
+               			android:text="500 TL" />
+        			
+               </LinearLayout>
+        	</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	
+	
+	
+	
+	<LinearLayout 
+	    android:id="@+id/layoutHesapIkinci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginLayout"
+        android:orientation="vertical"
+        android:background="@drawable/hesapLayoutBackground" >
+        
+        <RelativeLayout
+            android:id="@+id/layoutHesapToplam"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/hesapLayoutBackground"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textHesapTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/textHesapToplam"
+                android:text="555,00 TL" />
+
+        </RelativeLayout>
+	
+        <LinearLayout
+            android:id="@+id/layoutHesapGelirGiderToplam"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:background="@drawable/hesapLayoutBackground" >
+			
+            <LinearLayout
+        		android:id="@+id/layoutHesapGelirToplam"
+        		android:layout_width="match_parent"
+        		android:layout_height="match_parent"
+        		android:layout_weight="1"
+        		android:orientation="vertical" >
+        		
+                <LinearLayout
+        			android:id="@+id/layoutHesapGelirToplamUst"
+        			android:layout_width="match_parent"
+        			android:layout_height="match_parent"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+        		
+					<TextView
+               			android:id="@+id/textHesapGelirToplamUst"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+           				android:textSize="@dimen/textHesapToplam"
+               			android:text="Dönem Geliri" />
+        			
+				</LinearLayout>
+               
+				<LinearLayout
+        			android:id="@+id/layoutHesapGelirToplamAlt"
+        			android:layout_width="match_parent"
+        			android:layout_height="match_parent"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+        		
+                	<TextView
+               			android:id="@+id/textHesapGelirToplamAlt"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+           				android:textSize="@dimen/textHesapToplam"
+               			android:text="1000 TL" />
+        			
+               </LinearLayout>
+        	</LinearLayout>
+        	
+            <LinearLayout
+        		android:id="@+id/layoutHesapGelirToplam"
+        		android:layout_width="match_parent"
+        		android:layout_height="match_parent"
+        		android:layout_weight="1"
+        		android:orientation="vertical" >
+        		
+                <LinearLayout
+        			android:id="@+id/layoutHesapGelirToplamUst"
+        			android:layout_width="match_parent"
+        			android:layout_height="match_parent"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+        		
+					<TextView
+               			android:id="@+id/textHesapGelirToplamUst"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+           				android:textSize="@dimen/textHesapToplam"
+               			android:text="Dönem Geliri" />
+        			
+				</LinearLayout>
+               
+				<LinearLayout
+        			android:id="@+id/layoutHesapGelirToplamAlt"
+        			android:layout_width="match_parent"
+        			android:layout_height="match_parent"
+        			android:layout_weight="1"
+        			android:orientation="vertical" >
+        		
+                	<TextView
+               			android:id="@+id/textHesapGelirToplamAlt"
+                		android:layout_width="wrap_content"
+              	 		android:layout_height="wrap_content"
+           				android:textSize="@dimen/textHesapToplam"
+               			android:text="1000 TL" />
+        			
+               </LinearLayout>
+        	</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	
+</LinearLayout>

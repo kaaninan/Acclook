@@ -1,0 +1,38 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar"></style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+    
+    
+    <drawable name="actionbar">#0099cc</drawable>
+    <drawable name="navigation">#eee</drawable>
+    <drawable name="background">#f00</drawable>
+    
+    
+    
+    
+    <!-- Hesaplar -->
+    
+    <drawable name="hesapViewPager">#f0f0f0</drawable>
+    <drawable name="hesapViewPagerColor">#333</drawable>
+    <drawable name="hesapBackground">#ccc</drawable>
+    
+    <drawable name="hesapLayoutBackground">#fff</drawable>
+    <drawable name="hesapBaslikBackground">#018782</drawable>
+    
+    <drawable name="colorHesapBaslik">#eee</drawable>
+    <drawable name="colorHesapTumList">#333</drawable>
+    
+    <!-- #Hesaplar -->
+    
+    
+    
+    <!--  Kayıtlar -->
+	<drawable name="kayitGroupBackground">#eee</drawable>
+	
+    <!--  Kayıtlar -->
+
+
+</resources>

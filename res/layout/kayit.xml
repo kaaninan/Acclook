@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?android:attr/actionBarSize" >
+    
+    <FrameLayout
+        android:id="@+id/emptyView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:text="@string/listEmpty"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:text="@string/listEmpty2"/>
+        
+    </FrameLayout>
+    <!--
+        <za.co.immedia.pinnedheaderlistview.PinnedHeaderListView
+	    android:id="@+id/pinnedListView"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@android:color/white" />
+    -->
+    
+    <ExpandableListView
+        android:id="@+id/listExpandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    <!--
+	<com.hb.views.PinnedSectionListView
+	    android:id="@android:id/list"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" 
+	    android:headerDividersEnabled="false"
+	    android:footerDividersEnabled="false"
+	    android:divider="@null"	/>
+    
+    
+    
+   	<com.handmark.pulltorefresh.library.PullToRefreshListView
+    	android:id="@+id/hadi"
+    	android:layout_height="match_parent"
+    	android:layout_width="match_parent"
+    	android:background="@drawable/hesapLayout"
+    	android:layout_margin="@dimen/marginLayout" /> 
+   
+    
+	<ListView
+    	android:id="@+id/listKayit"
+    	android:layout_height="match_parent"
+    	android:layout_width="match_parent"
+    	android:background="@drawable/hesapLayoutBackground"
+    	android:layout_margin="@dimen/marginLayout" /> 
+    
+     -->
+     
+	
+</RelativeLayout>

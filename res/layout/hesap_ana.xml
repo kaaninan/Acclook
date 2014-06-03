@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutHesapTum"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hesapBackground"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:id="@+id/layoutHesapTumBirinci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/marginLayout"
+        android:layout_marginLeft="@dimen/marginLayout"
+        android:layout_marginTop="@dimen/marginLayout"
+        android:orientation="vertical" >
+        
+	    <LinearLayout
+		    android:id="@+id/layoutHesapTumBirinciBaslik"
+		    android:layout_width="match_parent"
+		    android:layout_height="40dp"
+		    android:paddingLeft="@dimen/marginLayout"
+		    android:gravity="center_vertical"
+		    android:background="@drawable/hesapBaslikBackground"
+		    android:orientation="vertical"
+		    android:text="@string/textHesapTumIkinciBaslik" >
+
+			<TextView
+			    android:id="@+id/textHesapTumBirinciBaslik"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/textHesapTumBirinciBaslik"
+			    android:textSize="@dimen/textHesapTumBaslik"
+			    android:textColor="@drawable/colorHesapBaslik" />
+
+		</LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutHesapTumBirinciToplam"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightLayoutHesapTumBirinciToplam"
+            android:background="@drawable/hesapLayoutBackground"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textHesapTumToplam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/textHesapToplam"
+                android:text="555,00 TL"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+         
+        <LinearLayout
+            android:id="@+id/layoutHesapTumBirinciCizgi"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#999999"
+            android:orientation="horizontal" />
+		
+        <LinearLayout
+            android:id="@+id/layoutHesapTumList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/listHesapTumList"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+            
+		</LinearLayout>
+	</LinearLayout>
+	
+	
+	
+	
+	
+	<LinearLayout 
+	    android:id="@+id/layoutHesapTumIkinci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginLayout"
+        android:orientation="vertical" >
+
+		<LinearLayout
+		    android:id="@+id/layoutHesapTumIkinciBaslik"
+		    android:layout_width="match_parent"
+		    android:layout_height="35dp"
+		    android:paddingLeft="@dimen/marginLayout"
+		    android:gravity="center_vertical"
+		    android:background="@drawable/hesapBaslikBackground"
+		    android:orientation="vertical"
+		    android:text="@string/textHesapTumIkinciBaslik" >
+
+			<TextView
+			    android:id="@+id/textHesapTumIkinciBaslik"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/textHesapTumIkinciBaslik"
+			    android:textSize="@dimen/textHesapTumBaslik"
+			    android:textColor="@drawable/colorHesapBaslik" />
+
+		</LinearLayout>
+		
+		<LinearLayout
+		    android:id="@+id/layoutHesapTumIkinciList"
+		    android:layout_width="match_parent"
+		    android:layout_height="50dp"
+		    android:background="@drawable/hesapLayoutBackground"
+		    android:orientation="vertical"
+		    android:text="@string/textHesapTumIkinciBaslik" >
+
+			<ListView
+			    android:id="@+id/listHesapTumIkinciList"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content" >
+			</ListView>
+
+		</LinearLayout>
+        
+	</LinearLayout>
+	
+	<Button
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Pinned"
+	    android:onClick="sendMessage" />
+	
+	
+	
+</LinearLayout>

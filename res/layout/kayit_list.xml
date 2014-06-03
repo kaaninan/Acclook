@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="100dp"
+	android:layout_marginBottom="20dp"
+	android:layout_gravity="center"
+	android:background="#ddd"
+	android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layoutKayitKategoriRenk"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#f00"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutKayitLeft"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:layout_toRightOf="@id/layoutKayitKategoriRenk"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/layoutKayitLeftUst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+				android:id="@+id/textKayitNot"
+				android:layout_width="wrap_content"
+				android:layout_height="50dp"
+				android:gravity="center_vertical"
+				android:text="Not"
+				android:textColor="#222" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutKayitLeftAlt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >            
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutKayitRight"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            
+            <TextView
+				android:id="@+id/textKayitTarih"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:gravity="center_vertical"
+        		android:text="29.12.2013"
+        		android:textColor="#222" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            
+            <TextView
+				android:id="@+id/textKayitTutar"
+        		android:layout_width="wrap_content"
+        		android:layout_height="50dp"
+        		android:gravity="center_vertical"
+        		android:text="56,00 TL"
+        		android:textColor="#222" />
+            
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

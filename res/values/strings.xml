@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Acclook</string>
+    
+    
+    <!-- Action Bar -->
+    
+	    <string name="action_add">Ekle</string>
+	    <string name="action_settings">Ayarlar</string>
+	    <string name="action_help">Yardım</string>
+	    
+    <!-- End Action Bar -->
+    
+    
+    
+    <!-- Navigation Drawer -->
+    
+	    <string name="drawer_open">Open</string>
+	    <string name="drawer_close">Close</string>
+	    
+	    <string-array name="drawer">
+	        <item>Hesaplar</item>
+	        <item>Kayıtlar</item>
+	        <item>İstatistikler</item>
+	        <item>Alışveriş Listesi</item>
+	        <item>Döviz</item>
+	    </string-array>
+	    
+	    <string-array name="pages">
+	        <item>me.kaaninan.acclook.Hesap</item>
+	        <item>me.kaaninan.acclook.Kayit</item>
+	        <item>me.kaaninan.acclook.Istatistik</item>
+	        <item>me.kaaninan.acclook.Alinacak</item>
+	        <item>me.kaaninan.acclook.Doviz</item>
+	    </string-array>
+	    
+    <!-- End Navigation Drawer -->
+    
+    
+    
+    <!-- Dialog Kayıt Ekle -->
+    
+	    <string name="hintTutar">Tutar</string>
+	    <string name="hintNot">Not</string>
+	    
+    <!-- End Dialog Kayıt Ekle -->
+    
+    
+    
+    <!--  Kayitlar -->
+	    <string name="listEmpty">Hiç veri yok.</string>
+	    <string name="listEmpty2">Eklemek için aşağıya kaydırın.</string>
+	    
+    <!--  End Kayitlar -->
+    
+    
+    
+    <!--  Hesaplar -->
+    
+    	<string name="textHesapTumBirinciBaslik">Toplam</string>
+    	<string name="textHesapTumIkinciBaslik">Bildirimler</string>
+    	
+    <!--  #Hesaplar -->
+    
+    
+    
+
+</resources>

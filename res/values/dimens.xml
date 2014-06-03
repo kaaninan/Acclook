@@ -1,0 +1,25 @@
+<resources>
+    
+    <!-- Navigation Drawer -->
+    
+    	<dimen name="navigationWidth">230dp</dimen>
+    	<dimen name="navigationItemPadding">50dp</dimen>
+    	
+    <!-- #Navigation Drawer -->
+    
+    	<dimen name="marginLayout">10dp</dimen>
+    
+    
+    <!--  Hesaplar -->
+    
+    	<dimen name="textHesapToplam">28sp</dimen>
+    	<dimen name="textLayoutHesapList">20sp</dimen>
+    	<dimen name="textHesapTumBaslik">22sp</dimen>
+    
+    	<dimen name="layoutHesapIcerikMargin">5dp</dimen>
+    	<dimen name="heightLayoutHesapTumBirinciToplam">100dp</dimen>
+    	<dimen name="heightLayoutHesapTumList">200dp</dimen>
+    
+    <!--  #Hesaplar -->
+
+</resources>
