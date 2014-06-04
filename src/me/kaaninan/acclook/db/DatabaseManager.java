@@ -282,7 +282,7 @@ public class DatabaseManager extends FragmentActivity {
 	    	    td.setKategoriId((c.getInt(c.getColumnIndex(DatabaseContract.Kayit.COLUMN_KATEGORI_ID))));
 	    	    td.setTarih((c.getString(c.getColumnIndex(DatabaseContract.Kayit.COLUMN_TARIH))));
 	 
-	    	    td.sectionPosition = sectionPosition;
+	    	    td.sectionPosition = sectionPosition++;
 	    	    td.listPosition = listPosition++;
 	    	    
 	            todos.add(td);

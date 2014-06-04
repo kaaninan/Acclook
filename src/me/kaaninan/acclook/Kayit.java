@@ -12,6 +12,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -360,7 +361,14 @@ public class Kayit extends Fragment{
 	
 	private void ayEkle(String dbTarih){
 		
+		// Expandable ListView
+		arrayListKayit = manager.getKayitlar(dbTarih, tercih);
+		yapildi = ay;
+		listDataChild.put(listDataHeader.get(a), arrayListKayit);
+		
 		int sP = manager.sectionPosition;
+		Log.i("1", String.valueOf(sP));
+		
 		int lP = manager.listPosition;
 
 		// Pinned için
@@ -369,17 +377,17 @@ public class Kayit extends Fragment{
 		kayitt.type = 1;
 		kayitt.sectionPosition = sP;
 		kayitt.listPosition = lP++;
-
-		// Expandable ListView
-		arrayListKayit = manager.getKayitlar(dbTarih, tercih);
-		yapildi = ay;
-		listDataChild.put(listDataHeader.get(a), arrayListKayit);
 		
-		manager.sectionPosition++;
+		Log.i("2", String.valueOf(sP));
+		
 		
 		// FastScrollAdapter
 		kayitlar.add(kayitt);
 		kayitlar.addAll(arrayListKayit);
+		
+		manager.sectionPosition++;
+		
+		Log.i("3", String.valueOf(manager.sectionPosition));
 		
 		a++;
 	}
