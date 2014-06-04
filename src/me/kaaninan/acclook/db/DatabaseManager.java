@@ -238,38 +238,35 @@ public class DatabaseManager extends FragmentActivity {
 	
 	private String selectQuery;
 	
+	public int sectionPosition = 0;
+	public int listPosition = 0;
+	
 	public ArrayList<KayitConstructor> getKayitlar(String dbTarih, String tercih) {
 		
 		ArrayList<KayitConstructor> todos = new ArrayList<KayitConstructor>();
 		
 		if(dbTarih != null){
 			if(tercih == "gun"){
-				
 				String[] tarih = convertDateTimeTireNokta(dbTarih);
 				String delims = "[.]+";
 				String[] gun_ay_yil = tarih[0].split(delims);
-				
 				selectQuery = "SELECT * FROM "+DatabaseContract.Kayit.TABLE_NAME+ " WHERE "+DatabaseContract.Kayit.COLUMN_TARIH+" LIKE '%"+gun_ay_yil[2]+"-"+gun_ay_yil[1]+"-"+gun_ay_yil[0]+"%'";
-				
-				
-				
 			}else if(tercih == "ay"){
 				String[] tarih = convertDateTimeTireNokta(dbTarih);
 				String delims = "[.]+";
 				String[] gun_ay_yil = tarih[0].split(delims);
-				
 				selectQuery = "SELECT * FROM "+DatabaseContract.Kayit.TABLE_NAME+ " WHERE "+DatabaseContract.Kayit.COLUMN_TARIH+" LIKE '%"+gun_ay_yil[2]+"-"+gun_ay_yil[1]+"%'";
 			}else if(tercih == "yil"){
 				String[] tarih = convertDateTimeTireNokta(dbTarih);
 				String delims = "[.]+";
 				String[] gun_ay_yil = tarih[0].split(delims);
-				
 				selectQuery = "SELECT * FROM " +DatabaseContract.Kayit.TABLE_NAME+ " WHERE "+DatabaseContract.Kayit.COLUMN_TARIH+" LIKE '%"+gun_ay_yil[2]+"%'";
 			}
 			
 		}else{
 			selectQuery = "SELECT * FROM " +DatabaseContract.Kayit.TABLE_NAME+ " ORDER BY " +DatabaseContract.Kayit.COLUMN_TARIH+ " DESC";	
 		}
+		
 		
 	    db = helper.getReadableDatabase();
 	    Cursor c = db.rawQuery(selectQuery, null);
@@ -285,6 +282,9 @@ public class DatabaseManager extends FragmentActivity {
 	    	    td.setKategoriId((c.getInt(c.getColumnIndex(DatabaseContract.Kayit.COLUMN_KATEGORI_ID))));
 	    	    td.setTarih((c.getString(c.getColumnIndex(DatabaseContract.Kayit.COLUMN_TARIH))));
 	 
+	    	    td.sectionPosition = sectionPosition;
+	    	    td.listPosition = listPosition++;
+	    	    
 	            todos.add(td);
 	        } while (c.moveToNext());
 	    }

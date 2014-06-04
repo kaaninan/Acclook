@@ -6,6 +6,12 @@
         android:icon="@drawable/content_new" 
         android:title="@string/action_add" />
     
+    <item 
+        android:id="@+id/action_db"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/collections_view_as_list"
+        android:title="@string/action_db" />
+    
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

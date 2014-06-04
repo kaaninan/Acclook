@@ -1,5 +1,11 @@
 <resources>
     
+    <!-- Test -->
+    	
+    	<dimen name="textViewWidth">200dp</dimen>
+    
+    <!-- #Test -->
+    
     <!-- Navigation Drawer -->
     
     	<dimen name="navigationWidth">230dp</dimen>

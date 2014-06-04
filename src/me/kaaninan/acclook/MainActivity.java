@@ -1,6 +1,7 @@
 package me.kaaninan.acclook;
 
 import me.kaaninan.acclook.db.DatabaseManager;
+import me.kaaninan.acclook.test.DatabaseList;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -14,7 +15,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -106,23 +106,27 @@ public class MainActivity extends FragmentActivity {
     @SuppressWarnings("deprecation")
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
+    	
         if (DrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+        
         switch(item.getItemId()) {
-        case R.id.action_add:      
-        	switch(options){
-        		case 0:
-        			showDialog(EKLE_HESAP);
-				case 1:
-					showDialog(EKLE_KAYIT);
-					break;
-				default:
-		            return super.onOptionsItemSelected(item);
-		        }
-        default:
-            return super.onOptionsItemSelected(item);
-        }
+        
+	        case R.id.action_add:
+				showDialog(EKLE_KAYIT);
+				break;
+				
+	        case R.id.action_db:
+	        	// TODO Database
+	        	Intent intent = new Intent(this, DatabaseList.class);
+	        	startActivity(intent);
+	        	break;
+	        	
+	        default:
+	            return super.onOptionsItemSelected(item);
+	        }
+		return false;
     }
     
     
@@ -234,9 +238,12 @@ public class MainActivity extends FragmentActivity {
 	            
 	    		manager.ekleKayit(tutar, aciklama, tarih);
 	    		
+	    		// TODO refresh
+	    		/*
 	    		Kayit kayitlar = (Kayit) getSupportFragmentManager().findFragmentById(R.id.main);
 	    		kayitlar.refresh();
-
+				*/
+	    		
 	            dialog.dismiss();
 	            removeDialog(EKLE_KAYIT);
 			}

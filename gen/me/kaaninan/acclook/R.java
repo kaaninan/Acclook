@@ -20,53 +20,59 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040009;
-        public static final int heightLayoutHesapTumBirinciToplam=0x7f040007;
-        public static final int heightLayoutHesapTumList=0x7f040008;
-        public static final int layoutHesapIcerikMargin=0x7f040006;
+        public static final int activity_horizontal_margin=0x7f04000a;
+        public static final int heightLayoutHesapTumBirinciToplam=0x7f040008;
+        public static final int heightLayoutHesapTumList=0x7f040009;
+        public static final int layoutHesapIcerikMargin=0x7f040007;
         /**  #Navigation Drawer 
          */
-        public static final int marginLayout=0x7f040002;
-        public static final int navigationItemPadding=0x7f040001;
-        /**  Navigation Drawer 
+        public static final int marginLayout=0x7f040003;
+        public static final int navigationItemPadding=0x7f040002;
+        /**  #Test 
+ Navigation Drawer 
          */
-        public static final int navigationWidth=0x7f040000;
+        public static final int navigationWidth=0x7f040001;
         /**   Hesaplar 
          */
-        public static final int textHesapToplam=0x7f040003;
-        public static final int textHesapTumBaslik=0x7f040005;
-        public static final int textLayoutHesapList=0x7f040004;
+        public static final int textHesapToplam=0x7f040004;
+        public static final int textHesapTumBaslik=0x7f040006;
+        public static final int textLayoutHesapList=0x7f040005;
+        /**  Test 
+         */
+        public static final int textViewWidth=0x7f040000;
     }
     public static final class drawable {
-        public static final int actionbar=0x7f020008;
-        public static final int background=0x7f02000a;
-        public static final int colorHesapBaslik=0x7f020010;
-        public static final int colorHesapTumList=0x7f020011;
-        public static final int content_new=0x7f020000;
-        public static final int drawer_shadow=0x7f020001;
-        public static final int hesapBackground=0x7f02000d;
-        public static final int hesapBaslikBackground=0x7f02000f;
-        public static final int hesapLayoutBackground=0x7f02000e;
+        public static final int actionbar=0x7f020009;
+        public static final int background=0x7f02000b;
+        public static final int collections_view_as_list=0x7f020000;
+        public static final int colorHesapBaslik=0x7f020011;
+        public static final int colorHesapTumList=0x7f020012;
+        public static final int content_new=0x7f020001;
+        public static final int drawer_shadow=0x7f020002;
+        public static final int hesapBackground=0x7f02000e;
+        public static final int hesapBaslikBackground=0x7f020010;
+        public static final int hesapLayoutBackground=0x7f02000f;
         /**  Hesaplar 
          */
-        public static final int hesapViewPager=0x7f02000b;
-        public static final int hesapViewPagerColor=0x7f02000c;
-        public static final int ic_action_new=0x7f020002;
-        public static final int ic_action_overflow=0x7f020003;
-        public static final int ic_action_previous_item=0x7f020004;
-        public static final int ic_drawer=0x7f020005;
-        public static final int ic_drawer2=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
+        public static final int hesapViewPager=0x7f02000c;
+        public static final int hesapViewPagerColor=0x7f02000d;
+        public static final int ic_action_new=0x7f020003;
+        public static final int ic_action_overflow=0x7f020004;
+        public static final int ic_action_previous_item=0x7f020005;
+        public static final int ic_drawer=0x7f020006;
+        public static final int ic_drawer2=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
         /**  #Hesaplar 
   Kayıtlar 
          */
-        public static final int kayitGroupBackground=0x7f020012;
-        public static final int navigation=0x7f020009;
+        public static final int kayitGroupBackground=0x7f020013;
+        public static final int navigation=0x7f02000a;
     }
     public static final class id {
-        public static final int action_add=0x7f090040;
-        public static final int action_help=0x7f090042;
-        public static final int action_settings=0x7f090041;
+        public static final int action_add=0x7f090047;
+        public static final int action_db=0x7f090048;
+        public static final int action_help=0x7f09004a;
+        public static final int action_settings=0x7f090049;
         public static final int drawer_layout=0x7f09003d;
         public static final int drawer_list=0x7f09003f;
         public static final int editTextAciklama=0x7f090005;
@@ -105,8 +111,11 @@ public final class R {
         public static final int lblListHeader=0x7f09003a;
         public static final int lblListItem=0x7f09003b;
         public static final int lblListItem2=0x7f09003c;
+        public static final int listGenel=0x7f090040;
+        public static final int listHesap=0x7f090044;
         public static final int listHesapTumIkinciList=0x7f090018;
         public static final int listHesapTumList=0x7f090013;
+        public static final int listKayit=0x7f090042;
         public static final int listSection=0x7f090031;
         public static final int main=0x7f09003e;
         public static final int pager=0x7f09001e;
@@ -131,6 +140,10 @@ public final class R {
         public static final int textLayoutHesapListSag=0x7f09001b;
         public static final int textLayoutHesapListSol=0x7f09001d;
         public static final int textView1=0x7f090000;
+        public static final int textView2=0x7f090041;
+        public static final int textView3=0x7f090043;
+        public static final int textView4=0x7f090045;
+        public static final int textView5=0x7f090046;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -152,6 +165,8 @@ public final class R {
         public static final int kayit_list_item=0x7f030010;
         public static final int list_item=0x7f030011;
         public static final int main=0x7f030012;
+        public static final int test=0x7f030013;
+        public static final int test_list_kayit=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -160,29 +175,30 @@ public final class R {
         /**  Action Bar 
          */
         public static final int action_add=0x7f050001;
-        public static final int action_help=0x7f050003;
-        public static final int action_settings=0x7f050002;
+        public static final int action_db=0x7f050002;
+        public static final int action_help=0x7f050004;
+        public static final int action_settings=0x7f050003;
         public static final int app_name=0x7f050000;
-        public static final int drawer_close=0x7f050005;
+        public static final int drawer_close=0x7f050006;
         /**  End Action Bar 
  Navigation Drawer 
          */
-        public static final int drawer_open=0x7f050004;
-        public static final int hintNot=0x7f050007;
+        public static final int drawer_open=0x7f050005;
+        public static final int hintNot=0x7f050008;
         /**  End Navigation Drawer 
  Dialog Kayıt Ekle 
          */
-        public static final int hintTutar=0x7f050006;
+        public static final int hintTutar=0x7f050007;
         /**  End Dialog Kayıt Ekle 
   Kayitlar 
          */
-        public static final int listEmpty=0x7f050008;
-        public static final int listEmpty2=0x7f050009;
+        public static final int listEmpty=0x7f050009;
+        public static final int listEmpty2=0x7f05000a;
         /**   End Kayitlar 
   Hesaplar 
          */
-        public static final int textHesapTumBirinciBaslik=0x7f05000a;
-        public static final int textHesapTumIkinciBaslik=0x7f05000b;
+        public static final int textHesapTumBirinciBaslik=0x7f05000b;
+        public static final int textHesapTumIkinciBaslik=0x7f05000c;
     }
     public static final class style {
         /** 

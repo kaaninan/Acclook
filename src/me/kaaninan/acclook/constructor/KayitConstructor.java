@@ -7,22 +7,24 @@ public class KayitConstructor {
 
 	public static int ITEM = 0;
 	public static int SECTION = 1;
-
+	
+	public int sectionPosition;
+	public int listPosition;
+	
 	public int type;
-	public String text;
 	
 	// ###
 	
 	
 	
 
-    int _id;
-    String _tur;
-    double _tutar;
-    String _not;
-    int _hesap_id;
-    int _kategori_id;
-    String _tarih;
+	public int _id;
+	public String _tur;
+	public double _tutar;
+	public String _not;
+	public int _hesap_id;
+	public int _kategori_id;
+	public String _tarih;
     
     String _header;
     
@@ -101,17 +103,6 @@ public class KayitConstructor {
     public void setHeader(String header){
     	this._header = header;
     }
-    
-    
-    // TYPE
-    public int getType(){
-    	return this.type;
-    }
-    
-    public void setType(int type){
-    	this.type = type;
-    }
-   
     
     
     

@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 
 public final class DatabaseContract {
 	
-	public static final int DATABASE_VERSION = 24;
+	public static final int DATABASE_VERSION = 25;
 	public static final String DATABASE_NAME= "db";
 	
 	public static class Hesap implements BaseColumns {
@@ -54,7 +54,9 @@ public final class DatabaseContract {
 		public static final String COLUMN_HESAP_ID= "hesap_id_kayit";
 		public static final String COLUMN_KATEGORI_ID = "kategori_id_kayit";
 		public static final String COLUMN_TARIH = "tarih_kayit";
+		
 		public static final String COLUMN_TYPE = "type";
+		// TODO kaldýr
 		
 		
 		public static final String DEFAULT_SORT_ORDER = "ad ASC";

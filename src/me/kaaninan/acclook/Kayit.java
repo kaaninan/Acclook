@@ -3,6 +3,7 @@ package me.kaaninan.acclook;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import me.kaaninan.acclook.adapter.FastScrollAdapter;
 import me.kaaninan.acclook.adapter.KayitPinnedAdapter;
 import me.kaaninan.acclook.constructor.KayitConstructor;
 import me.kaaninan.acclook.db.DatabaseContract;
@@ -11,7 +12,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +47,7 @@ public class Kayit extends Fragment{
 	
 	// Kayýt Pinned Adapter
 	private PinnedSectionListView listSection;
+	private KayitPinnedAdapter adapterPinned;
 	
 	/*
 	private boolean hasHeaderAndFooter;
@@ -73,26 +74,17 @@ public class Kayit extends Fragment{
 		
 		listSection = (PinnedSectionListView) root.findViewById(R.id.listSection);
 		
-		//arrayListKayit = manager.getKayitlar(null, null);
-		
 		prepareListData();
 		
-		KayitPinnedAdapter adapterPinned = new KayitPinnedAdapter(getActivity(), R.layout.kayit_list, kayitlar);
+		adapterPinned = new KayitPinnedAdapter(getActivity(), R.layout.kayit_list, kayitlar);
 		listSection.setAdapter(adapterPinned);
-		
+
+		// FastScroll
 		listSection.setFastScrollEnabled(true);
 		listSection.setFastScrollAlwaysVisible(true);
+		listSection.setAdapter(new FastScrollAdapter(getActivity(), R.layout.kayit_list, kayitlar));
 		
-		/*
-		// Pinned
-		prepareListData();
-		Log.i("burda daha önceden geldi buraya","geldi"+listDataHeader.size());
-		PinnedHeaderListView listView = (PinnedHeaderListView) root.findViewById(R.id.pinnedListView);
-        
-        TestSectionedAdapter sectionedAdapter = new TestSectionedAdapter(getActivity(), listDataHeader, listDataChild);
-        listView.setAdapter(sectionedAdapter);
-		*/
-		
+		// ###
 		
 		
 		/*
@@ -185,49 +177,9 @@ public class Kayit extends Fragment{
 		// End Expandable ListView onClick #############################################################################
 		*/
 		
-		
-		
-		
-		
-		/*
-		// Pull to Refresh
-    	final MainActivity main = new MainActivity();
-	    
-        list.setOnRefreshListener(new OnRefreshListener<ListView>() {
-            @Override
-            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-            	
-        		getActivity().showDialog(main.EKLE_KAYIT);
-        		
-                new GetDataTask().execute();
-            }
-        });*/
-    	
     	
         return root;
 	}
-	
-	
-	
-	
-	
-	// PinnedSection List View
-
-/*
-    @SuppressLint("NewApi")
-    private void initializeAdapter() {
-        getListView().setFastScrollEnabled(isFastScroll);
-        if (isFastScroll) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                getListView().setFastScrollAlwaysVisible(true);
-            }
-            setListAdapter(new FastScrollAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1));
-        } else {
-            setListAdapter(new SimpleAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1));
-        }
-    }
-    */
-    // #####
 	
 	
 	
@@ -407,19 +359,27 @@ public class Kayit extends Fragment{
 	}
 	
 	private void ayEkle(String dbTarih){
+		
+		int sP = manager.sectionPosition;
+		int lP = manager.listPosition;
+
+		// Pinned için
+		KayitConstructor kayitt = new KayitConstructor();
+		kayitt.setNot(listDataHeader.get(a));
+		kayitt.type = 1;
+		kayitt.sectionPosition = sP;
+		kayitt.listPosition = lP++;
+
+		// Expandable ListView
 		arrayListKayit = manager.getKayitlar(dbTarih, tercih);
 		yapildi = ay;
 		listDataChild.put(listDataHeader.get(a), arrayListKayit);
 		
-		// Pinned için
-		KayitConstructor kayitt = new KayitConstructor();
-		kayitt.setNot(listDataHeader.get(a));
-		kayitt.setType(1);
+		manager.sectionPosition++;
 		
+		// FastScrollAdapter
 		kayitlar.add(kayitt);
 		kayitlar.addAll(arrayListKayit);
-		
-		Log.i("Kayit.java, kayitlar size",String.valueOf(kayitlar.size()));
 		
 		a++;
 	}

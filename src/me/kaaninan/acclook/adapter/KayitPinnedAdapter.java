@@ -17,8 +17,12 @@ import com.hb.views.PinnedSectionListView.PinnedSectionListAdapter;
 public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionListAdapter {
 	    
 	private Context context;
-	private ArrayList<KayitConstructor> list;
+	protected static ArrayList<KayitConstructor> list;
 	private int layoutResourceId;
+	
+	// LOG
+	@SuppressWarnings("unused")
+	private String log = "KayitPinnedAdapter";
 	
 	private KayitConstructor kayit;
     
@@ -26,25 +30,29 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
     	super();
     	this.context = context;
     	this.layoutResourceId = layoutResourceId;
-    	this.list = list;
+    	KayitPinnedAdapter.list = list;
+    	
+    	prepareSections(list.size());
+    	
     }
     
     @Override
     public int getCount() {
-    	if(list.size() == 0)
-    		return 1;
         return list.size();
     }
 
-    
+    @Override
     public Object getItem(int position) {
-        return position;
+    	kayit = list.get(position);
+        return kayit;
     }
 
+    @Override
     public long getItemId(int position) {
         return position;
     }
     
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
     	
         View view = convertView;
@@ -61,8 +69,13 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
         KayitConstructor kayit = list.get(position);
         String tutarDouble = Double.toString(kayit.getTutar());
 */
-        kayit = list.get(position);
         
+        kayit = list.get(position);
+
+        if(kayit.type == 1){
+        	onSectionAdded(kayit, kayit.sectionPosition);
+        }
+        	
         not.setText(kayit.getNot());
 
         return view;
@@ -76,13 +89,15 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
     @Override 
     public int getItemViewType(int position) {
     	kayit = list.get(position);
-    	return kayit.getType();
+    	return kayit.type;
     }
 
     @Override
 	public boolean isItemViewTypePinned(int viewType) {
-		Log.i("is›tem..",String.valueOf(viewType));
-		return viewType == 1;
+		return viewType == KayitConstructor.SECTION;
 	}
 	
+    public void prepareSections(int sectionsNumber) { }
+    public void onSectionAdded(KayitConstructor section, int sectionPosition) { }
+    
 }

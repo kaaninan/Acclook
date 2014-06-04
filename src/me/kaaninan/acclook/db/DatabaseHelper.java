@@ -47,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		
 		// Ekleme
 		db.execSQL("INSERT INTO "+DatabaseContract.Hesap.TABLE_NAME+" ("+DatabaseContract.Hesap.COLUMN_ISIM+","+DatabaseContract.Hesap.COLUMN_TOPLAM+") VALUES ('Nakit','30')");
+		db.execSQL("INSERT INTO "+DatabaseContract.Hesap.TABLE_NAME+" ("+DatabaseContract.Hesap.COLUMN_ISIM+","+DatabaseContract.Hesap.COLUMN_TOPLAM+") VALUES ('Paypal','40')");
 		/*db.execSQL("INSERT INTO "+DatabaseContract.Kayit.TABLE_NAME+" ("+DatabaseContract.Kayit.COLUMN_NOT+","+DatabaseContract.Kayit.COLUMN_TUTAR+") VALUES ('Paypal','20')");
 		db.execSQL("INSERT INTO "+DatabaseContract.Kayit.TABLE_NAME+" ("+DatabaseContract.Kayit.COLUMN_NOT+","+DatabaseContract.Kayit.COLUMN_TUTAR+") VALUES ('Kredi Kartý','55')");
 		*/
