@@ -25,6 +25,7 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
 	private String log = "KayitPinnedAdapter";
 	
 	private KayitConstructor kayit;
+	private KayitConstructor kayit2;
     
     public KayitPinnedAdapter(Context context, int layoutResourceId, ArrayList<KayitConstructor> list) {
     	super();
@@ -32,7 +33,23 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
     	this.layoutResourceId = layoutResourceId;
     	KayitPinnedAdapter.list = list;
     	
-    	prepareSections(list.size());
+    	int a = 0;
+    	
+    	for(int i = 0; i < list.size(); i++){
+    		kayit2 = list.get(i);
+    		if(kayit2.type == 1){
+	        	a = a+1;
+	        }
+    	}
+    	prepareSections(a);
+    	
+    	for(int i = 0; i < list.size(); i++){
+    		kayit2 = list.get(i);
+    		if(kayit2.type == 1){
+	        	onSectionAdded(kayit2, kayit2.sectionPosition);
+	        }
+    	}
+    	
     	
     }
     
@@ -71,10 +88,6 @@ public class KayitPinnedAdapter extends BaseAdapter implements PinnedSectionList
 */
         
         kayit = list.get(position);
-
-        if(kayit.type == 1){
-        	onSectionAdded(kayit, kayit.sectionPosition);
-        }
         	
         not.setText(kayit.getNot());
 
