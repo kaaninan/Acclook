@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import me.kaaninan.acclook.constructor.KayitConstructor;
 import android.content.Context;
-import android.util.Log;
 import android.widget.SectionIndexer;
 
 
@@ -27,7 +26,7 @@ public class FastScrollAdapter extends KayitPinnedAdapter implements SectionInde
     @Override
 	public void onSectionAdded(KayitConstructor section, int sectionPosition) {
         sections[sectionPosition] = section;
-        Log.i("onSectionAdded",String.valueOf(section.listPosition));
+        //Log.i("onSectionAdded",String.valueOf(section.listPosition));
     }
 
     @Override
@@ -40,14 +39,6 @@ public class FastScrollAdapter extends KayitPinnedAdapter implements SectionInde
         if (section >= sections.length) {
             section = sections.length - 1;
         }
-        
-        // TODO Log
-        Log.i("aasd",String.valueOf(section));
-        
-        Log.i("List.position", list.get(section)._not +" - "+list.get(section).listPosition);
-        Log.i("Sections.position", sections[section]._not+" - "+ sections[section].listPosition);
-        
-        //return list.get(section).listPosition;
         return sections[section].listPosition;
     }
 

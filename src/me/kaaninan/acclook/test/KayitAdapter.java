@@ -58,7 +58,7 @@ public class KayitAdapter extends BaseAdapter {
         
         KayitConstructor kayit = list.get(position);
         
-        a.setText(kayit._not);
+        a.setText(kayit.getNot());
         b.setText(kayit.getTarih());
         c.setText(String.valueOf(kayit.getTutar()));
         d.setText(kayit.getTur());

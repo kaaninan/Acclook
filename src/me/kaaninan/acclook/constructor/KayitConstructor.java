@@ -16,12 +16,16 @@ public class KayitConstructor {
 	// ###
 	
 	
+	@Override public String toString(){
+		return this.getNot();
+	}
+	
 	
 
 	public int _id;
 	public String _tur;
 	public double _tutar;
-	public String _not;
+	public String text;
 	public int _hesap_id;
 	public int _kategori_id;
 	public String _tarih;
@@ -59,11 +63,11 @@ public class KayitConstructor {
     
     //NOT
     public String getNot(){
-        return this._not;
+        return this.text;
     }
      
-    public void setNot(String not){
-        this._not = not;
+    public void setNot(String text){
+        this.text = text;
     }
     
     // KATEGORI
